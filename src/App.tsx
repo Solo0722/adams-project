@@ -17,11 +17,12 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/auth" element={<AuthLayout />}>
-          <Route path="login" element={<Login />} />
+          <Route path="signin" element={<Login />} />
           <Route path="signup" element={<Signup />} />
         </Route>
         <Route path="/app" element={<AppLayout />}>
           <Route path="" element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="projects" element={<Projects />} />
           <Route path="projects/:projectId" element={<Project />} />
         </Route>

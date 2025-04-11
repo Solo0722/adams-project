@@ -16,9 +16,11 @@ const Navbar = () => {
         return scrollY.onChange(() => setHasScrolled(scrollY.get() > 10))
     }, [scrollY])
 
+
+
     return (
         <header
-            className={`fixed top-0 w-full z-50 transition-all duration-300 py-4 ${hasScrolled ? "bg-white/80 backdrop-blur-lg shadow-sm" : ""
+            className={`px-4 sm:px-6 md:px-8 lg:px-16 fixed top-0 w-full z-50 transition-all duration-300 py-4 ${hasScrolled ? "bg-white/80 backdrop-blur-lg shadow-sm" : ""
                 }`}
         >
             <div className="container mx-auto px-4">
@@ -29,31 +31,34 @@ const Navbar = () => {
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-8">
-                        <Link to="#about" className="text-sm text-gray-600 hover:text-black transition-colors">
+                        <Link to="#about" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
                             About
                         </Link>
-                        <Link to="#solutions" className="text-sm text-gray-600 hover:text-black transition-colors">
+                        <Link to="#solutions" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
                             Solutions
                         </Link>
-                        <Link to="#services" className="text-sm text-gray-600 hover:text-black transition-colors">
+                        <Link to="#services" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
                             Services
                         </Link>
-                        <Link to="#insights" className="text-sm text-gray-600 hover:text-black transition-colors">
+                        <Link to="#insights" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
                             Insights
                         </Link>
-                        <Link to="#contact" className="text-sm text-gray-600 hover:text-black transition-colors">
+                        <Link to="#testimonials" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
+                            Testimonials
+                        </Link>
+                        <Link to="#contact" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
                             Contact
                         </Link>
                     </nav>
 
                     <div className="hidden md:flex items-center space-x-4">
-                        <Link to="/auth">
-                            <Button variant="ghost" className="text-sm">
+                        <Link to="/auth/signin">
+                            <Button variant="ghost" className={`text-sm ${hasScrolled ? "" : "text-white hover:bg-white/10"}`}>
                                 Sign In
                             </Button>
                         </Link>
-                        <Link to="/auth">
-                            <Button className="bg-sky-500 hover:bg-sky-600 text-white">Sign up</Button>
+                        <Link to="/auth/signup">
+                            <Button className={"bg-sky-500 hover:bg-sky-600 text-white"}>Sign up</Button>
                         </Link>
                     </div>
 
@@ -103,6 +108,13 @@ const Navbar = () => {
                                 Insights
                             </Link>
                             <Link
+                                to="#testimonials"
+                                className="text-sm text-gray-600 hover:text-black transition-colors"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Testimonials
+                            </Link>
+                            <Link
                                 to="#contact"
                                 className="text-sm text-gray-600 hover:text-black transition-colors"
                                 onClick={() => setIsOpen(false)}
@@ -110,12 +122,12 @@ const Navbar = () => {
                                 Contact
                             </Link>
                             <div className="pt-4 space-y-2">
-                                <Link to="/auth">
+                                <Link to="/auth/signin">
                                     <Button variant="ghost" className="w-full justify-center text-sm">
                                         Sign In
                                     </Button>
                                 </Link>
-                                <Link to="/auth">
+                                <Link to="/auth/signup">
                                     <Button className="w-full justify-center bg-sky-500 hover:bg-sky-600 text-white">Sign up</Button>
                                 </Link>
                             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import MainContent from '@/components/main-content'
 import ProjectCard from '@/components/project-card'
 import { Button } from '@/components/ui/button'

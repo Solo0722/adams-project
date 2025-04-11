@@ -1,5 +1,5 @@
 import MainContent from '@/components/main-content'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Activity, Building2, Package, AlertTriangle, Plus, Clock, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -66,7 +66,7 @@ const Dashboard = () => {
             description='Overview of your infrastructure projects'
             toolbar={
                 <Button
-                    className="h-8 text-[12px] font-bold"
+                    className="h-8 text-[12px] font-bold bg-sky-500 hover:bg-sky-700 text-white"
                     onClick={() => setIsCreateProjectOpen(true)}
                 >
                     <Plus className="w-4 h-4 mr-2" />

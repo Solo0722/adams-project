@@ -1,12 +1,14 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { FcGoogle } from 'react-icons/fc'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
+    const navigate = useNavigate();
     const handleGoogleLogin = () => {
         // TODO: Implement Google OAuth
         console.log('Google login clicked')
+        navigate('/app/dashboard')
+
     }
 
     return (

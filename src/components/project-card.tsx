@@ -1,4 +1,3 @@
-import React from 'react'
 import { Building2, MapPin, Calendar, Users, ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -22,27 +21,27 @@ type Video = {
 type Project = {
     id: string
     name: string
-    assetName: string
+    assetName?: string
     location: string
     startDate: string
     endDate: string
-    status: 'planning' | 'in-progress' | 'completed' | 'on-hold'
-    teamSize: number
-    budget: number
-    description: string
-    lastModified: string
-    author: string
-    sensors: {
+    status?: 'planning' | 'in-progress' | 'completed' | 'on-hold'
+    teamSize?: number
+    budget?: number
+    description?: string
+    lastModified?: string
+    author?: string
+    sensors?: {
         accelerometer: boolean
         gyroscope: boolean
         gps: boolean
     }
-    analysisOptions: string[]
-    videos: Video[]
-    sensorData: {
-        accelerometer: SensorData[]
-        gyroscope: SensorData[]
-        gps: SensorData[]
+    analysisOptions?: string[]
+    videos?: Video[]
+    sensorData?: {
+        accelerometer?: SensorData[]
+        gyroscope?: SensorData[]
+        gps?: SensorData[]
     }
 }
 
@@ -73,8 +72,8 @@ const ProjectCard = ({ project }: Props) => {
                     <h3 className="text-lg font-semibold text-gray-900">{project.name}</h3>
                     <p className="text-sm text-gray-500">{project.assetName}</p>
                 </div>
-                <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
-                    {project.status.replace('-', ' ')}
+                <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status ?? 'in-progress')}`}>
+                    {(project.status ?? 'in-progress').replace('-', ' ')}
                 </span>
             </div>
 
@@ -96,7 +95,7 @@ const ProjectCard = ({ project }: Props) => {
 
                 <div className="flex items-center text-sm text-gray-600">
                     <Building2 className="h-4 w-4 mr-2" />
-                    <span>Budget: ${project.budget.toLocaleString()}</span>
+                    <span>Budget: ${project.budget?.toLocaleString()}</span>
                 </div>
 
                 <p className="text-sm text-gray-500 line-clamp-2">

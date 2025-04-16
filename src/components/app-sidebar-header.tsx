@@ -13,9 +13,9 @@ const AppSidebarHeader = () => {
       <SidebarMenuItem>
         <SidebarMenuButton
           size="lg"
-          className={`data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground data-[state=open]:py-12 py-12`}
+          className={`data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground`}
         >
-          <Logo showTitle={state === "expanded"} url="/app" />
+          <Logo url="/app" />
         </SidebarMenuButton>
       </SidebarMenuItem>
     </SidebarMenu>

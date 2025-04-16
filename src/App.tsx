@@ -9,8 +9,9 @@ import AppLayout from '@/layouts/AppLayout'
 import Dashboard from '@/pages/Dashboard/Dashboard'
 import Projects from '@/pages/Projects/Projects'
 import Project from '@/pages/Project/Project'
-import PavementAssetAnalysis from '@/pages/PavementAssetAnalysis/PavementAssetAnalysis'
-import TrafficAssetAnalysis from '@/pages/TrafficAssetAnalysis/TrafficAssetAnalysis'
+import PavementAssetAnalysis from '@/pages/Project/PavementAssetAnalysis'
+import TrafficAssetAnalysis from '@/pages/Project/TrafficAssetAnalysis'
+import TMC from '@/pages/TMC/TMC'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="projects/:projectId" element={<Project />} />
           <Route path="projects/:projectId/pavement-asset-analysis" element={<PavementAssetAnalysis />} />
           <Route path="projects/:projectId/traffic-asset-analysis" element={<TrafficAssetAnalysis />} />
+          <Route path="tmc" element={<TMC />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Layers } from "lucide-react";
+import { Target } from "lucide-react";
 import { Link } from "react-router-dom";
 type Props = {
     url?: string;
@@ -12,8 +12,8 @@ const Logo = ({ url, showTitle, iconClassName, titleClassName }: Readonly<Props>
         <Link to={url ?? "/"} className="flex items-center space-x-2">
             <div className="flex flex-col items-center gap-1">
                 <div className="flex items-center justify-center gap-2">
-                    <Layers className="h-6 w-6 text-sky-400" />
-                    <span className={cn("font-bold text-xl text-sky-400", iconClassName)}>AdAMS</span>
+                    <Target className="h-6 w-6 text-blue-400" />
+                    <span className={cn("font-bold text-xl text-blue-400", iconClassName)}>AdAMS</span>
                 </div>
 
                 {

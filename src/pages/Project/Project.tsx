@@ -8,9 +8,11 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Project = () => {
     const [isUploadModalOpen, setIsUploadModalOpen] = useState(false)
+    const navigate = useNavigate();
 
     // Sample data for charts
     const accelerometerData = [
@@ -133,13 +135,13 @@ const Project = () => {
                     </CardHeader>
                     <CardContent>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <Button variant="outline" className="h-auto py-4">
+                            <Button variant="outline" className="h-auto py-4" onClick={() => navigate("/app/projects/DboFihPGrksaOrtTYw3H/pavement-asset-analysis")}>
                                 <div className="text-left">
                                     <p className="font-medium">Pavement Analysis</p>
                                     <p className="text-sm text-gray-500">Analyze road surface conditions</p>
                                 </div>
                             </Button>
-                            <Button variant="outline" className="h-auto py-4">
+                            <Button variant="outline" className="h-auto py-4" onClick={() => navigate("/app/projects/DboFihPGrksaOrtTYw3H/traffic-asset-analysis")}>
                                 <div className="text-left">
                                     <p className="font-medium">Traffic Analysis</p>
                                     <p className="text-sm text-gray-500">Analyze traffic patterns and flow</p>

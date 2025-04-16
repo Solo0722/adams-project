@@ -20,45 +20,39 @@ const Navbar = () => {
 
     return (
         <header
-            className={`px-4 sm:px-6 md:px-8 lg:px-16 fixed top-0 w-full z-50 transition-all duration-300 py-4 ${hasScrolled ? "bg-white/80 backdrop-blur-lg shadow-sm" : ""
+            className={`px-4 sm:px-6 md:px-8 lg:px-16 sticky top-0 w-full z-50 transition-all duration-300 py-2  ${hasScrolled ? "bg-white/80 backdrop-blur-lg shadow-sm" : ""
                 }`}
         >
             <div className="container mx-auto px-4">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center space-x-2">
-                        <Logo showTitle />
+                        <Logo />
                     </div>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-8">
-                        <Link to="#about" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
-                            About
-                        </Link>
-                        <Link to="#solutions" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
+                        <Link to="#solutions" className={`text-sm transition-colors text-gray-600 hover:text-black`}>
                             Solutions
                         </Link>
-                        <Link to="#services" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
+                        <Link to="#services" className={`text-sm transition-colors text-gray-600 hover:text-black`}>
                             Services
                         </Link>
-                        <Link to="#insights" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
+                        <Link to="#insights" className={`text-sm transition-colors text-gray-600 hover:text-black`}>
                             Insights
                         </Link>
-                        <Link to="#testimonials" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
-                            Testimonials
-                        </Link>
-                        <Link to="#contact" className={`text-sm transition-colors ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white/90 hover:text-white"}`}>
+                        <Link to="#contact" className={`text-sm transition-colors text-gray-600 hover:text-black`}>
                             Contact
                         </Link>
                     </nav>
 
                     <div className="hidden md:flex items-center space-x-4">
                         <Link to="/auth/signin">
-                            <Button variant="ghost" className={`text-sm ${hasScrolled ? "" : "text-white hover:bg-white/10"}`}>
+                            <Button variant="ghost" className={`text-sm transition-colors text-gray-600 hover:text-black bg-accent hover:bg-accent/80 whitespace-nowrap`}>
                                 Sign In
                             </Button>
                         </Link>
                         <Link to="/auth/signup">
-                            <Button className={"bg-sky-500 hover:bg-sky-600 text-white"}>Sign up</Button>
+                            <Button className={"bg-blue-400 hover:bg-blue-500 text-white whitespace-nowrap"}>Sign up</Button>
                         </Link>
                     </div>
 
@@ -80,13 +74,6 @@ const Navbar = () => {
                     <div className="container mx-auto px-4 py-4">
                         <nav className="flex flex-col space-y-4">
                             <Link
-                                to="#about"
-                                className="text-sm text-gray-600 hover:text-black transition-colors"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                About
-                            </Link>
-                            <Link
                                 to="#solutions"
                                 className="text-sm text-gray-600 hover:text-black transition-colors"
                                 onClick={() => setIsOpen(false)}
@@ -106,13 +93,6 @@ const Navbar = () => {
                                 onClick={() => setIsOpen(false)}
                             >
                                 Insights
-                            </Link>
-                            <Link
-                                to="#testimonials"
-                                className="text-sm text-gray-600 hover:text-black transition-colors"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Testimonials
                             </Link>
                             <Link
                                 to="#contact"

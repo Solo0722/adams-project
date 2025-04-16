@@ -18,19 +18,19 @@ const Footer = () => {
                             real-time.
                         </p>
                         <div className="flex gap-4">
-                            <Link to="#" className="text-gray-400 hover:text-sky-400 transition-colors">
+                            <Link to="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                                 <Twitter className="h-5 w-5" />
                                 <span className="sr-only">Twitter</span>
                             </Link>
-                            <Link to="#" className="text-gray-400 hover:text-sky-400 transition-colors">
+                            <Link to="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                                 <Linkedin className="h-5 w-5" />
                                 <span className="sr-only">LinkedIn</span>
                             </Link>
-                            <Link to="#" className="text-gray-400 hover:text-sky-400 transition-colors">
+                            <Link to="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                                 <Facebook className="h-5 w-5" />
                                 <span className="sr-only">Facebook</span>
                             </Link>
-                            <Link to="#" className="text-gray-400 hover:text-sky-400 transition-colors">
+                            <Link to="#" className="text-gray-400 hover:text-blue-400 transition-colors">
                                 <Github className="h-5 w-5" />
                                 <span className="sr-only">GitHub</span>
                             </Link>
@@ -41,22 +41,22 @@ const Footer = () => {
                         <h3 className="font-medium text-white text-lg mb-4">Solutions</h3>
                         <ul className="space-y-3">
                             <li>
-                                <Link to="#" className="text-sm text-gray-400 hover:text-sky-400 transition-colors">
+                                <Link to="#" className="text-sm text-gray-400 hover:text-blue-400 transition-colors">
                                     Asset Tracking
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="text-sm text-gray-400 hover:text-sky-400 transition-colors">
+                                <Link to="#" className="text-sm text-gray-400 hover:text-blue-400 transition-colors">
                                     Preventive Maintenance
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="text-sm text-gray-400 hover:text-sky-400 transition-colors">
+                                <Link to="#" className="text-sm text-gray-400 hover:text-blue-400 transition-colors">
                                     Analytics Dashboard
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="text-sm text-gray-400 hover:text-sky-400 transition-colors">
+                                <Link to="#" className="text-sm text-gray-400 hover:text-blue-400 transition-colors">
                                     Inventory Management
                                 </Link>
                             </li>
@@ -67,22 +67,22 @@ const Footer = () => {
                         <h3 className="font-medium text-white text-lg mb-4">Company</h3>
                         <ul className="space-y-3">
                             <li>
-                                <Link to="#" className="text-sm text-gray-400 hover:text-sky-400 transition-colors">
+                                <Link to="#" className="text-sm text-gray-400 hover:text-blue-400 transition-colors">
                                     About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="text-sm text-gray-400 hover:text-sky-400 transition-colors">
+                                <Link to="#" className="text-sm text-gray-400 hover:text-blue-400 transition-colors">
                                     Careers
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="text-sm text-gray-400 hover:text-sky-400 transition-colors">
+                                <Link to="#" className="text-sm text-gray-400 hover:text-blue-400 transition-colors">
                                     Blog
                                 </Link>
                             </li>
                             <li>
-                                <Link to="#" className="text-sm text-gray-400 hover:text-sky-400 transition-colors">
+                                <Link to="#" className="text-sm text-gray-400 hover:text-blue-400 transition-colors">
                                     Contact
                                 </Link>
                             </li>
@@ -97,9 +97,9 @@ const Footer = () => {
                         <div className="flex flex-col sm:flex-row gap-3">
                             <Input
                                 placeholder="Your email address"
-                                className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 focus-visible:ring-sky-500"
+                                className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 focus-visible:ring-blue-500"
                             />
-                            <Button className="bg-sky-500 hover:bg-sky-600 whitespace-nowrap">Subscribe</Button>
+                            <Button className="bg-blue-400 hover:bg-blue-500 whitespace-nowrap">Subscribe</Button>
                         </div>
                         <p className="text-xs text-gray-500 mt-3">We respect your privacy. Unsubscribe at any time.</p>
                     </div>
@@ -108,13 +108,13 @@ const Footer = () => {
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} AdAMS. All rights reserved.</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
-                        <Link to="#" className="text-sm text-gray-500 hover:text-sky-400 transition-colors">
+                        <Link to="#" className="text-sm text-gray-500 hover:text-blue-400 transition-colors">
                             Privacy Policy
                         </Link>
-                        <Link to="#" className="text-sm text-gray-500 hover:text-sky-400 transition-colors">
+                        <Link to="#" className="text-sm text-gray-500 hover:text-blue-400 transition-colors">
                             Terms of Service
                         </Link>
-                        <Link to="#" className="text-sm text-gray-500 hover:text-sky-400 transition-colors">
+                        <Link to="#" className="text-sm text-gray-500 hover:text-blue-400 transition-colors">
                             Cookie Policy
                         </Link>
                     </div>

@@ -1,8 +1,7 @@
-import React from 'react'
 import MainContent from '@/components/main-content'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { MapPin, AlertCircle, Image as ImageIcon, Calendar, Activity, Rotate3D, Navigation } from 'lucide-react'
+import { MapPin, AlertCircle, Image as ImageIcon, Calendar } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 
 const distressTypes = [

@@ -108,3 +108,67 @@ export const whatWeDo = [
     ],
   },
 ];
+
+export const FAQs = [
+  {
+    question: "What is AdAMS?",
+    answer:
+      "AdAMS is a comprehensive infrastructure asset management system designed to help organizations efficiently manage, monitor, and maintain their infrastructure assets. It provides tools for asset tracking, maintenance scheduling, compliance monitoring, and data-driven decision making.",
+  },
+  {
+    question: "How does AdAMS help with compliance?",
+    answer:
+      " AdAMS ensures compliance by providing real-time monitoring, automated reporting, and comprehensive audit trails. It helps track maintenance schedules, regulatory requirements, and asset performance metrics, making it easier to meet industry standards and regulations.",
+  },
+  {
+    question: "Can I integrate AdAMS with other systems?",
+    answer:
+      "Yes, AdAMS is designed to integrate seamlessly with many common business tools and systems. We support integration with various asset management, maintenance, and enterprise resource planning (ERP) systems to ensure a smooth workflow.",
+  },
+  {
+    question: "Is AdAMS customizable?",
+    answer:
+      "Yes, AdAMS is highly customizable. We understand that every organization has unique needs, so we offer a range of customization options to tailor the system to your specific requirements.",
+  },
+  {
+    question: "What kind of support does AdAMS provide?",
+    answer:
+      "AdAMS offers comprehensive support, including training, technical assistance, and customer service. Our team is dedicated to ensuring you get the most out of our system.",
+  },
+];
+
+export const insights = [
+  {
+    title: "Pavement Condition Index (PCI)",
+    description:
+      "Advanced analysis of pavement conditions using AI-powered image processing and machine learning algorithms.",
+    list: [
+      "Automated condition assessment",
+      "Real-time data collection",
+      "Predictive analytics for maintenance planning",
+    ],
+    image: "/pavecap-video.gif",
+  },
+  {
+    title: "Pavement Distress Evaluation",
+    description:
+      "AI-powered distress detection and classification for accurate pavement condition assessment.",
+    list: [
+      "Detailed distress classification",
+      "Severity level assessment",
+      "Automated reporting and analysis",
+    ],
+    image: "/pde.gif",
+  },
+  {
+    title: "Traffic Sign Retroreflectivity",
+    description:
+      " Precise measurement and analysis of traffic sign retroreflectivity for improved road safety.",
+    list: [
+      "Automated accurate retroreflectivity measurement",
+      "Compliance monitoring",
+      "Maintenance prioritization",
+    ],
+    image: "/pavecap-video.gif",
+  },
+];

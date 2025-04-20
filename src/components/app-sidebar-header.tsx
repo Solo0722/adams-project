@@ -2,12 +2,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  useSidebar,
 } from "@/components/ui/sidebar"
 import Logo from "@/components/logo"
 
 const AppSidebarHeader = () => {
-  const { state } = useSidebar()
   return (
     <SidebarMenu>
       <SidebarMenuItem>

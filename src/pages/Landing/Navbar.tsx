@@ -20,7 +20,7 @@ const Navbar = () => {
 
     return (
         <header
-            className={`px-4 sm:px-6 md:px-8 lg:px-16 sticky top-0 w-full z-50 transition-all duration-300 py-2  ${hasScrolled ? "bg-white/80 backdrop-blur-lg shadow-sm" : ""
+            className={`px-4 sm:px-6 md:px-8 lg:px-16 sticky top-0 w-full z-50 transition-all duration-300 py-2  ${hasScrolled ? "bg-white/80 backdrop-blur-lg shadow-sm" : "bg-transparent"
                 }`}
         >
             <div className="container mx-auto px-4">
@@ -34,11 +34,11 @@ const Navbar = () => {
                         <Link to="#solutions" className={`text-sm transition-colors text-gray-600 hover:text-black`}>
                             Solutions
                         </Link>
-                        <Link to="#services" className={`text-sm transition-colors text-gray-600 hover:text-black`}>
-                            Services
-                        </Link>
                         <Link to="#insights" className={`text-sm transition-colors text-gray-600 hover:text-black`}>
                             Insights
+                        </Link>
+                        <Link to="#services" className={`text-sm transition-colors text-gray-600 hover:text-black`}>
+                            Services
                         </Link>
                         <Link to="#contact" className={`text-sm transition-colors text-gray-600 hover:text-black`}>
                             Contact
@@ -48,7 +48,7 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center space-x-4">
                         <Link to="/auth/signin">
                             <Button variant="ghost" className={`text-sm transition-colors text-gray-600 hover:text-black bg-accent hover:bg-accent/80 whitespace-nowrap`}>
-                                Sign In
+                                Sign in
                             </Button>
                         </Link>
                         <Link to="/auth/signup">
@@ -81,18 +81,18 @@ const Navbar = () => {
                                 Solutions
                             </Link>
                             <Link
-                                to="#services"
-                                className="text-sm text-gray-600 hover:text-black transition-colors"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Services
-                            </Link>
-                            <Link
                                 to="#insights"
                                 className="text-sm text-gray-600 hover:text-black transition-colors"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Insights
+                            </Link>
+                            <Link
+                                to="#services"
+                                className="text-sm text-gray-600 hover:text-black transition-colors"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Services
                             </Link>
                             <Link
                                 to="#contact"
@@ -104,11 +104,11 @@ const Navbar = () => {
                             <div className="pt-4 space-y-2">
                                 <Link to="/auth/signin">
                                     <Button variant="ghost" className="w-full justify-center text-sm">
-                                        Sign In
+                                        Sign in
                                     </Button>
                                 </Link>
                                 <Link to="/auth/signup">
-                                    <Button className="w-full justify-center bg-sky-500 hover:bg-sky-600 text-white">Sign up</Button>
+                                    <Button className="w-full justify-center bg-blue-400 hover:bg-blue-500 text-white">Sign up</Button>
                                 </Link>
                             </div>
                         </nav>

@@ -27,13 +27,15 @@ import {
     Zap,
     Shield,
     Globe,
-    Play,
+    PlayCircle,
 } from "lucide-react"
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Navbar from "@/pages/Landing/Navbar"
 import { FAQs, insights, solutions } from "@/pages/Landing/constants"
 import Footer from "@/pages/Landing/Footer"
+import { Link, useLocation } from "react-router-dom"
+import { useEffect } from "react"
 
 const Landing = () => {
     const containerAnimation = {
@@ -76,6 +78,17 @@ const Landing = () => {
             },
         },
     }
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [location]);
 
     return (
         <div className="bg-gradient-to-b from-white to-blue-50">
@@ -189,23 +202,28 @@ const Landing = () => {
                             data-driven insights to mitigate risk and ensure compliance.
                         </motion.p>
                         <motion.div variants={itemAnimation} className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-                            <Button
-                                size="lg"
-                                className="bg-blue-400 hover:bg-blue-500 text-white shadow-lg shadow-blue-400/20 transition-all duration-300 hover:shadow-blue-400/30 hover:-translate-y-1"
-                            >
-                                <Sparkles className="mr-2 h-4 w-4" /> Start For Free
-                            </Button>
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                className="border-blue-200 text-blue-600 hover:bg-blue-50 transition-all duration-300 hover:-translate-y-1"
-                            >
-                                <Play className="mr-2 h-4 w-4" /> Get a Demo
-                            </Button>
+                            <Link to="/auth/signup">
+                                <Button
+                                    size="lg"
+                                    className="bg-blue-400 hover:bg-blue-500 text-white shadow-lg shadow-blue-400/20 transition-all duration-300 hover:shadow-blue-400/30 hover:-translate-y-1"
+                                >
+                                    <Sparkles className="mr-2 h-4 w-4" /> Start For Free
+                                </Button>
+                            </Link>
+                            <Link to="#demo-video">
+                                <Button
+                                    size="lg"
+                                    variant="outline"
+                                    className="border-blue-200 text-blue-600 hover:bg-blue-50 transition-all duration-300 hover:-translate-y-1"
+                                >
+                                    <PlayCircle className="mr-2 h-4 w-4" /> Get a Demo
+                                </Button>
+                            </Link>
                         </motion.div>
                     </motion.div>
-                    <motion.div className="pt-5 relative" variants={containerAnimation} initial="initial" animate="animate">
-                        <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl blur opacity-30"></div>
+                    <motion.div id="demo-video" className="pt-5 relative" variants={containerAnimation} initial="initial" animate="animate">
+                        <div
+                            className="absolute -inset-0.5 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl blur opacity-30"></div>
                         <HeroVideoDialog
                             className="block w-full max-w-3xl mx-auto relative"
                             animationStyle="from-center"
@@ -232,7 +250,7 @@ const Landing = () => {
                 </section>
 
                 {/* Solutions Section */}
-                <section className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-24 relative overflow-hidden">
+                <section id="solutions" className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-24 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-full h-full overflow-hidden">
                         <div className="absolute top-[30%] -right-[10%] w-[40%] h-[40%] rounded-full bg-blue-400/5 blur-3xl"></div>
                     </div>
@@ -286,16 +304,18 @@ const Landing = () => {
                                         </div>
                                     ))}
                                 </div>
-                                <button className="text-blue-500 font-medium flex items-center group-hover:text-blue-600 transition-colors duration-300 relative z-10">
-                                    Learn More <ChevronRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                                </button>
+                                <Link to="/auth/signup">
+                                    <button className="cursor-pointer text-blue-500 font-medium flex items-center group-hover:text-blue-600 transition-colors duration-300 relative z-10">
+                                        Learn More <ChevronRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                    </button>
+                                </Link>
                             </motion.div>
                         ))}
                     </motion.div>
                 </section>
 
                 {/* Insights Section */}
-                <section className="py-24 relative overflow-hidden">
+                <section id="insights" className="py-24 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-b from-blue-900 to-blue-800"></div>
                     <div className="absolute inset-0 opacity-20">
                         <GridPattern width={40} height={40} x={-20} y={-20} className="text-white" />
@@ -355,9 +375,11 @@ const Landing = () => {
                                             ))}
                                         </ul>
                                         <div className="mt-6 pt-6 border-t border-gray-100">
-                                            <Button className="w-full bg-blue-50 hover:bg-blue-100 text-blue-600">
-                                                Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                                            </Button>
+                                            <Link to="/auth/signup">
+                                                <Button className="w-full cursor-pointer bg-blue-50 hover:bg-blue-100 text-blue-600">
+                                                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                                                </Button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </motion.div>
@@ -415,14 +437,14 @@ const Landing = () => {
                                 <div className="flex items-center">
                                     <div className="h-14 w-14 rounded-full bg-blue-400 flex items-center justify-center overflow-hidden mr-4 border-2 border-white shadow-lg">
                                         <img
-                                            src="https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg"
+                                            src="https://adams.ndsu-smartlab.com/assets/images/armstrong.png"
                                             alt="Testimonial avatar"
                                             className="h-full w-full object-cover"
                                         />
                                     </div>
                                     <div>
-                                        <div className="font-medium text-lg">Darlene Robertson</div>
-                                        <div className="text-sm text-gray-500">Head of Buildings at MetroCity</div>
+                                        <div className="font-medium text-lg">Dr. Armstrong Aboah</div>
+                                        <div className="text-sm text-gray-500">Assistant Professor, North Dakota State University</div>
                                     </div>
                                 </div>
                             </div>
@@ -475,7 +497,7 @@ const Landing = () => {
                 </section>
 
                 {/* Features Section */}
-                <section className="py-24 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
+                <section id="services" className="py-24 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-full h-full overflow-hidden">
                         <div className="absolute top-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-blue-400/5 blur-3xl"></div>
                         <div className="absolute bottom-[10%] -left-[10%] w-[30%] h-[30%] rounded-full bg-blue-400/5 blur-3xl"></div>
@@ -586,7 +608,7 @@ const Landing = () => {
                 </section>
 
                 {/* Contact Us Section */}
-                <section className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-24">
+                <section id="contact" className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-24">
                     <div className="grid md:grid-cols-2 gap-12 items-center bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-8 md:p-16 shadow-2xl relative overflow-hidden">
                         <div className="absolute inset-0 opacity-10">
                             <GridPattern width={40} height={40} x={-20} y={-20} className="text-white" />
@@ -703,19 +725,23 @@ const Landing = () => {
                             Join thousands of organizations that trust AdAMS for their infrastructure asset management needs.
                         </motion.p>
                         <motion.div variants={itemAnimation} className="flex flex-col sm:flex-row justify-center gap-4">
-                            <Button
-                                size="lg"
-                                className="bg-blue-400 hover:bg-blue-500 text-white shadow-lg shadow-blue-400/20 transition-all duration-300 hover:shadow-blue-400/30 hover:-translate-y-1"
-                            >
-                                <Sparkles className="mr-2 h-4 w-4" /> Start Your Free Trial
-                            </Button>
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                className="border-blue-200 text-blue-600 hover:bg-blue-50 transition-all duration-300 hover:-translate-y-1"
-                            >
-                                <Calendar className="mr-2 h-4 w-4" /> Schedule a Demo
-                            </Button>
+                            <Link to="/auth/signup">
+                                <Button
+                                    size="lg"
+                                    className="bg-blue-400 hover:bg-blue-500 text-white shadow-lg shadow-blue-400/20 transition-all duration-300 hover:shadow-blue-400/30 hover:-translate-y-1"
+                                >
+                                    <Sparkles className="mr-2 h-4 w-4" /> Start For Free
+                                </Button>
+                            </Link>
+                            <Link to="#demo-video">
+                                <Button
+                                    size="lg"
+                                    variant="outline"
+                                    className="border-blue-200 text-blue-600 hover:bg-blue-50 transition-all duration-300 hover:-translate-y-1"
+                                >
+                                    <Calendar className="mr-2 h-4 w-4" /> Schedule a Demo
+                                </Button>
+                            </Link>
                         </motion.div>
                     </motion.div>
                 </section>
